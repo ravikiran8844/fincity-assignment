@@ -15,7 +15,7 @@ id:1
 ]
 const Projects = () => {
   return (
-    <section className='container py-5'>
+    <section className='container py-5' id="projects">
         {projectsList.map((project,index)=>
   <Project odd={index % 2 !== 0} key={project.id} />
   )}

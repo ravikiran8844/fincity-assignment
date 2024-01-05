@@ -1,7 +1,28 @@
+"use client";
+
 import Image from 'next/image'
 import React from 'react'
 
 const Navbar = () => {
+
+  const handleLinkClick = () => {
+    const offcanvas = document.getElementById('offcanvasNavbar');
+    const body = document.body;
+
+    if (offcanvas) {
+      offcanvas.classList.remove('show');
+      document.querySelector(".offcanvas-backdrop").classList.remove('show');
+
+
+       // Remove inline styles from body
+    body.style.overflow = '';
+    body.style.paddingRight = '';
+    }
+  };
+
+
+
+
   return (
     <>
   {/* Navbar 2 - Bootstrap Brain Component */}
@@ -19,13 +40,13 @@ const Navbar = () => {
         <div className='d-none d-md-block'>
             <ul className='navbar-nav d-flex flex-row gap-3'>
                 <li className="nav-item">
-                    <a className='nav-link'>About</a>
+                    <a href='#about' className='nav-link'>About</a>
                 </li>
                 <li className="nav-item">
-                    <a className='nav-link'>Projects</a>
+                    <a href='#projects' className='nav-link'>Projects</a>
                 </li>
                 <li className="nav-item">
-                    <a className='nav-link'>Contacts</a>
+                    <a  href='#footer' className='nav-link'>Contacts</a>
                 </li>
             </ul>
         </div>
@@ -70,20 +91,20 @@ const Navbar = () => {
         <div className="offcanvas-body">
           <ul className="navbar-nav justify-content-end flex-grow-1">
             <li className="nav-item">
-              <a className="nav-link active" href="#">
+              <a onClick={handleLinkClick} className="nav-link active" href="#">
                 Home
               </a>
             </li>
 
 
             <li className="nav-item">
-                    <a className='nav-link'>About</a>
+                    <a onClick={handleLinkClick} href='#about' className='nav-link'>About</a>
                 </li>
                 <li className="nav-item">
-                    <a className='nav-link'>Projects</a>
+                    <a onClick={handleLinkClick}  href='#projects' className='nav-link'>Projects</a>
                 </li>
                 <li className="nav-item">
-                    <a className='nav-link'>Contacts</a>
+                    <a onClick={handleLinkClick} href='#footer' className='nav-link'>Contacts</a>
                 </li>
 
          
