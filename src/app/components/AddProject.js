@@ -2,7 +2,7 @@
 
 import { ProjectsContext } from '@/context/ProjectsContext';
 import Image from 'next/image'
-import React, { useContext } from 'react'
+import React, { useContext,useState } from 'react'
 import { useForm } from "react-hook-form";
 
 
@@ -22,6 +22,7 @@ const AddProject = () => {
       const onSubmit = (data) => {
         addNewProject(data)
         console.log(data);
+
         reset();
       };
 
@@ -41,7 +42,7 @@ const AddProject = () => {
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className='mb-3'>
                     <label className='form-label'>Project Name</label>
-                    <input   {...register("name", { required: true })} type='text' className='form-control' />
+                    <input  placeholder='Enter Project Name'  {...register("name", { required: true })} type='text' className='form-control' />
                     {errors.name?.type === "required" && (
                     <div className="text-danger fs-6" role="alert">
                       Project Name is Required
@@ -51,7 +52,7 @@ const AddProject = () => {
 
                     <div  className='mb-3'>
                     <label className='form-label'>Project link</label>
-                    <input  {...register("link", { required: true })} type='text'  className='form-control' />
+                    <input  placeholder='Enter Project Link' {...register("link", { required: true })} type='text'  className='form-control' />
                     {errors.name?.type === "required" && (
                     <div className="text-danger fs-6" role="alert">
                       Project Link is Required
@@ -59,19 +60,19 @@ const AddProject = () => {
                   )}
                     </div>
 
-                    <div  className='mb-3'>
+                    {/* <div  className='mb-3'>
                     <label className='form-label'>Project Image</label>
-                    <input accept="image/png, image/gif, image/jpeg, , image/webp"  {...register("image", { required: true })} type='file'  className='form-control' />
+                    <input  onChange={handleChange} {...register("image", { required: true })} type='file' accept="image/*"  className='form-control' />
                     {errors.name?.type === "required" && (
                     <div className="text-danger fs-6" role="alert">
                       Project Image is Required
                     </div>
                   )}
-                    </div>
+                    </div> */}
 
                     <div  className='mb-3'>
                     <label className='form-label'>Description</label>
-                    <textarea  {...register("description", { required: true })}  className='form-control'></textarea>
+                    <textarea placeholder='Enter Description'  {...register("description", { required: true })}  className='form-control'></textarea>
                     {errors.name?.type === "required" && (
                     <div className="text-danger fs-6" role="alert">
                       Project Description is Required

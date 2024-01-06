@@ -19,7 +19,7 @@ const Project = ({ odd,image,name,description,link }) => {
         </div>
   
         <div className='project-item_grid-item'>
-          <Image alt='project image' height={526} width={496} className='img-fluid w-100 object-fit-cover' src={image} />
+          <Image alt='project image' height={526} width={496} className='img-fluid w-100 object-fit-cover' src={`/${image ? image : 'placeholder.png'}`} />
         </div>
       </div>
     );
