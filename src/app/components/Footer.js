@@ -10,7 +10,7 @@ const Footer = () => {
           <div className="text-center">
             <div className="d-flex justify-content-center align-items-center gap-4 mb-3">
               <div>
-                <a href="#">
+                <a target="_blank" href="https://github.com/ravikiran8844">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width={49}
@@ -27,7 +27,7 @@ const Footer = () => {
               </div>
 
               <div>
-                <a href="#">
+                <a target='_blank' href='https://www.linkedin.com/in/ravi-kiran-bonthu/' >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width={39}
@@ -44,7 +44,7 @@ const Footer = () => {
               </div>
 
               <div>
-                <a href="#">
+                <a href="mailto:ravi.kiran88@gmail.com">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width={43}

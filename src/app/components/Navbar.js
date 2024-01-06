@@ -27,8 +27,8 @@ const Navbar = () => {
     <>
   {/* Navbar 2 - Bootstrap Brain Component */}
   <nav className="navbar bg-transparent bsb-navbar bsb-navbar-caret position-absolute top-0 w-100">
-    <div className="container position-relative justify-content-between">
-      <a className="navbar-brand" href="index.html">
+    <div className="container-fluid px-3 px-md-5  position-relative justify-content-between">
+      <a className="navbar-brand" href="#">
         <Image
           src="/logo.png"
           alt="BootstrapBrain Logo"
