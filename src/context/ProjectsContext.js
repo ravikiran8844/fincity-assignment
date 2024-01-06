@@ -26,8 +26,15 @@ export function ProjectsProvider({children}) {
     }
   ]);
 
+
+
+  const addNewProject=(project)=>{
+    console.log(project)
+    setMyProjects([project,...myProjects])
+  }
+
   return (
-    <ProjectsContext.Provider value={{ myProjects }}>
+    <ProjectsContext.Provider value={{ myProjects,addNewProject }}>
       {children}
     </ProjectsContext.Provider>
   );

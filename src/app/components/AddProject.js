@@ -1,11 +1,15 @@
 "use client";
 
+import { ProjectsContext } from '@/context/ProjectsContext';
 import Image from 'next/image'
-import React from 'react'
+import React, { useContext } from 'react'
 import { useForm } from "react-hook-form";
 
 
 const AddProject = () => {
+    const {addNewProject} = useContext(ProjectsContext)
+
+
     const {
         register,
         handleSubmit,
@@ -16,6 +20,7 @@ const AddProject = () => {
 
 
       const onSubmit = (data) => {
+        addNewProject(data)
         console.log(data);
         reset();
       };
