@@ -29,13 +29,7 @@ const Navbar = () => {
   <nav className="navbar bg-transparent bsb-navbar bsb-navbar-caret position-absolute top-0 w-100">
     <div className="container-fluid px-3 px-md-5  position-relative justify-content-between">
       <a className="navbar-brand" href="#">
-        <Image
-          src="/logo.png"
-          alt="BootstrapBrain Logo"
-          width={130}
-          height={32}
-          className='img-fluid'
-        />
+        RK
       </a>
         <div className='d-none d-md-block'>
             <ul className='navbar-nav d-flex flex-row gap-3'>

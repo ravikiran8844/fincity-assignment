@@ -44,7 +44,7 @@ const Footer = () => {
               </div>
 
               <div>
-                <a href="mailto:ravi.kiran88@gmail.com">
+                <a href="mailto:ravi.kiran8844@gmail.com">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width={43}

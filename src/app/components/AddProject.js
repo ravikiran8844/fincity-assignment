@@ -1,7 +1,26 @@
+"use client";
+
 import Image from 'next/image'
 import React from 'react'
+import { useForm } from "react-hook-form";
+
 
 const AddProject = () => {
+    const {
+        register,
+        handleSubmit,
+        watch,
+        reset,
+        formState: { errors },
+      } = useForm();
+
+
+      const onSubmit = (data) => {
+        console.log(data);
+        reset();
+      };
+
+      
   return (
     <section className='add-project'>
         <div className='container py-4'>
@@ -14,20 +33,45 @@ const AddProject = () => {
 
             <div className='col-12'>
             
-                <form>
+                <form onSubmit={handleSubmit(onSubmit)}>
                     <div className='mb-3'>
                     <label className='form-label'>Project Name</label>
-                    <input  className='form-control' />
+                    <input   {...register("name", { required: true })} type='text' className='form-control' />
+                    {errors.name?.type === "required" && (
+                    <div className="text-danger fs-6" role="alert">
+                      Project Name is Required
+                    </div>
+                  )}
                     </div>
 
                     <div  className='mb-3'>
                     <label className='form-label'>Project link</label>
-                    <input  className='form-control' />
+                    <input  {...register("link", { required: true })} type='text'  className='form-control' />
+                    {errors.name?.type === "required" && (
+                    <div className="text-danger fs-6" role="alert">
+                      Project Link is Required
+                    </div>
+                  )}
+                    </div>
+
+                    <div  className='mb-3'>
+                    <label className='form-label'>Project Image</label>
+                    <input accept="image/png, image/gif, image/jpeg, , image/webp"  {...register("image", { required: true })} type='file'  className='form-control' />
+                    {errors.name?.type === "required" && (
+                    <div className="text-danger fs-6" role="alert">
+                      Project Image is Required
+                    </div>
+                  )}
                     </div>
 
                     <div  className='mb-3'>
                     <label className='form-label'>Description</label>
-                    <textarea  className='form-control'></textarea>
+                    <textarea  {...register("description", { required: true })}  className='form-control'></textarea>
+                    {errors.name?.type === "required" && (
+                    <div className="text-danger fs-6" role="alert">
+                      Project Description is Required
+                    </div>
+                  )}
                     </div>
 
                     <div className='text-end'>

@@ -1,18 +1,18 @@
 import Image from 'next/image'
 import React from 'react'
 
-const Project = ({ odd,image }) => {
+const Project = ({ odd,image,name,description,link }) => {
     return (
       <div className={`project-item ${odd ? 'grid-reverse' : ''} mb-5`}>
         <div className='m-auto p-4 project-item_grid-item'>
           <div className='fs-1 mb-3'>
-            Project Name 
+            {name}
           </div>
           <div className='fs-5 mb-3'>
-            I created this personal project in order to show how to create an interface in Figma using a portfolio as an example.
+            {description}
           </div>
           <div>
-            <a className='btn btn-outline-dark rounded-5 px-4'>
+            <a target='_blank' href={link} className='btn btn-outline-dark rounded-5 px-4'>
               View Project
             </a>
           </div>
